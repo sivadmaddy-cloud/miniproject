@@ -7,6 +7,9 @@ function AddRecipe() {
   const [category, setCategory] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [image, setImage] = useState("");
+  const [rating, setRating] = useState("");
+  const [review, setReview] = useState("");
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,7 +18,9 @@ function AddRecipe() {
       title,
       category,
       ingredients: ingredients.split(","),
-      image
+      image,
+      rating,
+      review
     });
   };
 
@@ -53,6 +58,28 @@ function AddRecipe() {
         className="imgr"
       />
 
+
+<select
+  value={rating}
+  onChange={(e) => setRating(e.target.value)}
+  className="rater"
+>
+  <option value="">Select Rating</option>
+  <option value="1">⭐ 1</option>
+  <option value="2">⭐ 2</option>
+  <option value="3">⭐ 3</option>
+  <option value="4">⭐ 4</option>
+  <option value="5">⭐ 5</option>
+</select>
+
+<div className="reviewr">
+<textarea
+  placeholder="Write a short review about the food..."
+  value={review}
+  onChange={(e) => setReview(e.target.value)}
+  rows="4"
+/>
+</div>
       <button type="submit" className="butr">Add</button>
        <p>Share Your Favourite Foody</p>
     </form>

@@ -8,8 +8,9 @@ import Signup from "./pages/Signup";
 import AddRecipe from "./pages/AddRecipe";
 import RecipeDetails from "./pages/RecipeDetails";
 import EditRecipe from "./pages/EditRecipe";
+import Recipes from "./pages/Recipes";
 
-// import Bookmarks from "./pages/Bookmarks";
+
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -24,7 +25,8 @@ function App() {
         <Route path="/recipe/:id" element={<RecipeDetails />} />
         <Route path="/add" element={user ? <AddRecipe /> : <Navigate to="/login" />} />
         <Route path="/edit/:id" element={user ? <EditRecipe /> : <Navigate to="/login" />} />
-       
+       <Route path="/recipes" element={<Recipes />} />
+
       </Routes>
     </>
   );

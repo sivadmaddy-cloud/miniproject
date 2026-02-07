@@ -6,6 +6,7 @@ export default function Home() {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
 
+
   useEffect(() => {
     Api.get("/recipes").then(res => setRecipes(res.data));
   }, []);
@@ -27,6 +28,7 @@ export default function Home() {
 });
 
 return (
+
   <div className="recipes-grid">
     {filteredRecipes.map(recipe => (
       <RecipeCard key={recipe.id} recipe={recipe} />

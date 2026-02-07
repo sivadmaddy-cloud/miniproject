@@ -1,0 +1,25 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Chicken Biryani",
+      "cuisine": "indian",
+      "category": "lunch",
+      "description": "spicy indian chicken curry"
+    },
+    {
+      "id": 2,
+      "title": "Veg Fried Rice",
+      "cuisine": "chinese",
+      "category": "dinner",
+      "description": "quick and tasty vegetable fried rice"
+    },
+    {
+      "id": 3,
+      "title": "Pasta",
+      "cuisine": "italian",
+      "category": "dinner",
+      "description": "italian pasta with meat sauce"
+    }
+  ]
+}

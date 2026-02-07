@@ -4,7 +4,7 @@
    GLOBAL RESET & THEME
 =========================== */
 :root {
-  --primary: #dfdaf1ba;
+  --primary:#dfdaf1ba;
   --secondary: #2e4d61;
   --thirdary:#0a720a;
   --bg: #f9fafb;
@@ -12,7 +12,10 @@
   --text: #242424;
   --muted: #777;
 }
+ /* body{
+background-color: var(--text);
 
+} */
 * {
   margin: 0;
   padding: 0;
@@ -24,7 +27,6 @@
 body {
   background: var(--container);
   color: var(--text);
-  background-image: url("https://img.freepik.com/premium-photo/whimsical-food-cartoon-illustrations-your-design-projects_1046319-4292.jpg?w=1500");
   background-repeat: no-repeat;
   background-position:50%;
   background-size:auto;
@@ -34,24 +36,35 @@ body {
    NAVBAR
 =========================== */
 nav {
-  background: var(--primary);
+  background: var(--muted);
   padding: 16px 40px;
   display: flex;
   align-items: center;
+  justify-content:space-between;
   font-size:20px;
-  gap: 50px;
+ gap: 50px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
   
 }
-
+.navlinks{
+  gap: 60px;
+  padding-left:10px;
+display: flex;
+}
+.navbar{
+  gap: 20px;
+}
 nav a {
   text-decoration: none;
   color: var(--secondary);
   font-weight: 600;
+  
+ 
 }
 
 nav a:hover {
   color:whitesmoke;
+ 
 }
 
 nav button {
@@ -95,12 +108,91 @@ nav button {
   padding: 20px;
 }
 
+/*newone*/
+.page {
+  padding: 60px 40px;
+}
+.top-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+/* TITLE */
+.top-section h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* SEARCH + FILTER ROW */
+.filters {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+
+.filters select {
+  padding: 6px 10px;
+}
+
+/* RECIPES GRID */
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap:30px;
+}
+
+.gotit input{
+padding: 10px;
+border-radius:20px;
+margin-right:10px;
+border:2px solid black;
+}
+
+.gotit select{
+border:2px solid black;
+  border-radius:20px;
+  padding:10px; 
+}
+
+/*end*/
+/*Add recipe*/
+.rater{
+padding:10px 30px 10px;
+ margin-left:25px;
+ margin-top:20px;
+   border:1px solid ;
+ border-radius:10px;
+ text-align: center;
+}
+.reviewr{
+margin-top:20px;
+margin-left:30px;
+padding:10px;
+  
+}
+
+.reci{
+   display: grid;
+   grid-template-columns:repeat(3, 1fr);
+   justify-content: center;
+}
+.set{
+ margin-right:40px;
+ display: flex;
+justify-content: center;
+height:50px;
+align-items: center;
+
+ 
+}
 /* Recipe card styling */
 .recipe-card {
   background-color:whitesmoke;
   border-radius: 10px;
   padding: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px var(--muted);
   text-align: center;
 
 }
@@ -113,8 +205,16 @@ nav button {
   border-radius: 8px;
 }
 
+.Reci{
+  display:flex;
+  flex-direction:row-reverse;
+}
 
+.sf{
+  display:flex;
+  justify-content: center;
 
+}
 
 .recipe-card:hover {
   transform: translateY(-8px);
@@ -148,16 +248,16 @@ nav button {
 .form {
   background: var(--card);
   max-width: 480px;
-  margin: 40px auto;
+  margin: 40px auto; 
   padding: 50px;
   border-radius: 28px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 60px 40px rgba(0, 0, 0, 0.1);
 }
 
 .form h2 {
   text-align: center;
   margin-bottom: 25px;
- 
+ color: #2e4d61;
 }
 
 .form input,
@@ -192,20 +292,36 @@ view
   justify-items:center;
   margin-left:300px;
   margin-top:10px;
-  font-size:22px;
-  background-color:rgb(213, 179, 135);
+  font-size:22px;                           
+  background-color:#dfdaf1ba;                        
   width:1000px;
-  gap:70px;
+  padding:60px;
+  gap:8px;
   border-radius:12px;
 }
 
+.view p{
+ margin-bottom:10px;
+}
+.view h1{
+
+margin-bottom:40px;
+}
+
+
+.view img{
+  height:500px;
+  margin-left:180px;
+}
 .ed{
-  border:1px solid rgb(166, 33, 33);
+  border:1px solid #dfdaf1ba;
   border-radius:12px;
-  padding:0px 10px;
-  background-color:rgb(206, 133, 43);
+  padding:0px 18px;
+  background-color:white;
 margin-left:1px;
 margin-top:2px;
+
+
 }
 /* ===========================
    RECIPE DETAILS
@@ -257,22 +373,23 @@ Add Recipe
 
 .addrecipe{
  display:grid;
- max-width:1200px;
+ /* max-width:1200px; */
  justify-self: center;
- margin-top:100px;
+ margin-top:10px;
  padding: 85px;
 background: var(--bg);
 border-radius: 18px;
-border:1px solid white;
+border:3px solid var(--muted);
+box-shadow: 0 30px 32px blue;
 }
 .titler{
   display: flex;
  padding:10px 28px 10px;
-  border:1px solid ;
+  border:1px solid black;
  border-radius:10px;
 }
 .addrecipe  p {
-margin-top:45px;;
+margin-top:15px;;
 font-size:20px;
 text-decoration:dashed;
 
